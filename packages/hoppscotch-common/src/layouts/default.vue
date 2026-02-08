@@ -67,6 +67,10 @@
       @hide-modal="showSupport = false"
     />
     <AppOptions v-else :show="showSupport" @hide-modal="showSupport = false" />
+    <AppFirstTimeTips
+      :show="showFirstTimeTips"
+      @hide-modal="onDismissFirstTimeTips"
+    />
 
     <!-- Let additional stuff be registered -->
     <template
@@ -87,6 +91,10 @@ import "splitpanes/dist/splitpanes.css"
 import { computed, onBeforeMount, onMounted, ref, watch } from "vue"
 import { RouterView, useRouter } from "vue-router"
 
+import {
+  dismissFirstTimeTips,
+  getShowFirstTimeTips,
+} from "~/composables/first-time-tips"
 import { useI18n } from "~/composables/i18n"
 import { useToast } from "~/composables/toast"
 import { InvocationTriggers, defineActionHandler } from "~/helpers/actions"
@@ -102,6 +110,11 @@ const router = useRouter()
 
 const showSearch = ref(false)
 const showSupport = ref(false)
+const showFirstTimeTips = getShowFirstTimeTips()
+
+const onDismissFirstTimeTips = () => {
+  dismissFirstTimeTips()
+}
 
 const expandNavigation = useSetting("EXPAND_NAVIGATION")
 const rightSidebar = useSetting("SIDEBAR")

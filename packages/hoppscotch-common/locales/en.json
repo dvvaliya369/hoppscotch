@@ -2295,5 +2295,31 @@
       "delete_success": "Mock server deleted successfully",
       "delete_error": "Failed to delete mock server"
     }
+  },
+  "onboarding": {
+    "title": "Welcome to Hoppscotch",
+    "step_of": "Step {current} of {total}",
+    "steps": {
+      "create_request": {
+        "title": "Create a New Request",
+        "description": "Start by entering a URL in the address bar and selecting an HTTP method (GET, POST, PUT, etc.). Click Send to fire off your first API request and see the response instantly."
+      },
+      "save_to_collections": {
+        "title": "Save Requests to Collections",
+        "description": "Organize your API requests by saving them into collections. Collections help you group related requests together, making it easy to find and reuse them later."
+      },
+      "import_file": {
+        "title": "Import a Request File",
+        "description": "Already have API definitions? Import collections from OpenAPI, Postman, Insomnia, or other formats. Go to the Collections sidebar and use the Import option to get started quickly."
+      },
+      "use_environments": {
+        "title": "Use Environments",
+        "description": "Environments let you define variables (like base URLs, tokens, or API keys) that can be reused across requests. Switch between environments to test against different servers effortlessly."
+      }
+    },
+    "next": "Next",
+    "back": "Back",
+    "skip": "Skip",
+    "done": "Get Started"
   }
 }
